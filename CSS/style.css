@@ -1,0 +1,71 @@
+body {
+    background-color:rgb(53, 53, 53);
+    color: white;
+    font-family: sans-serif;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.grid div {
+    margin: 2px;
+    border: solid 1px white;
+}
+
+.Parent {
+    background-color:rgb(0, 107, 139);
+    border: solid 2px white;
+    width: 600px;
+    height: 700px;
+    text-align: center;
+    padding: 4px;
+}
+
+.month {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-shadow: 1px 1px black;
+}
+
+.arrow {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+h2 {
+    font-size: 1.3rem;
+    text-align: center;
+    text-shadow: 1px 1px black;
+}
+
+.day {
+    background-color: rgb(184, 119, 0);
+    border: solid 1px black;
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 10px;
+}
+
+
+.num {
+    border: solid 1px black;
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 10px;
+}
+
+.gr {
+    background-color: rgb(126, 126, 126);
+    color:rgb(75, 75, 75);
+}
+
+.ac {
+    background-color: rgb(226, 161, 40);
+}
+
+.cu {
+    background-color: rgb(202, 91, 0);
+}
