@@ -28,20 +28,24 @@ function daysInAMonth(year) {
     return days;
 }
 
-function dateSetter(wDay, curMonth, year, curDay) {
+function dateSetter(wDay, month, year) {
     //Sets the array returned by the daysInAMonth function to a variable
     let arr = daysInAMonth(year);
 
-    if(curMonth == 0) {
+    const date = new Date();
+    let curMonth = date.getMonth();
+    let curDay = date.getDate();
+
+    if(month == 0) {
         //If month is 0 (January), set last month var to 11 (December).
         var lMonth = 11;
     }
     else {
         //If month is not January, set last month var to current month - 1
-        var lMonth = curMonth - 1;
+        var lMonth = month - 1;
     }
     //Gets the number of days in the current month and the previous month using the daysInAMonth function.
-    let daysThisMonth = arr[curMonth];
+    let daysThisMonth = arr[month];
     let daysLastMonth = arr[lMonth];
 
     //Row Number.
@@ -72,7 +76,7 @@ function dateSetter(wDay, curMonth, year, curDay) {
 
     //This loop gives a class to each div. If the day of month selected by the for loop is the current day, it gives the div the cu (current) class. If the day of the month is not the current day but is apart of the month, it gives the div the ac class (active). Lastly, if the day is not apart of the month or the condition (c) defined earlier is false, it will give the div the gr class(Greyed out).
     for(var i = 0;i <= 6;i++) {
-        if(n == curDay && c) {
+        if(n == curDay && month == curMonth && c) {
             document.getElementById(`r${rn}-${i}`).className += " cu";
         }
         else if(n > 0 && c) {
@@ -248,7 +252,7 @@ window.addEventListener("load", function() {
     let start = check.getDay();
 
     //Calls the dateSetter function with the weekday of the first day of the current month, the current month, the current year, and optionally the current day of the month.
-    dateSetter(start, month, year, date);
+    dateSetter(start, month, year);
 
     //Gives the forwards and backwards buttons event listeners that run their functions upon being clicked.
     document.getElementById("left").addEventListener("click", backward);
